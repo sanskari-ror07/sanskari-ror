@@ -1,4 +1,550 @@
+cd ~/sanskari-ror
+rm index.html
+nano index.html
+
+
+
+
+
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SANSKARI ROR | Official Website</title>
+
+<meta name="description" content="Official website of SANSKARI ROR - Editor, Creator & Anime Lover.">
+<meta name="theme-color" content="#050505">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(5,5,5,.75);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#00e5ff;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 60px;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:#00e5ff;
+    filter:blur(180px);
+    opacity:.15;
+    border-radius:50%;
+}
+
+.profile{
+    width:145px;
+    height:145px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #00e5ff;
+    padding:5px;
+    box-shadow:0 0 35px rgba(0,229,255,.35);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(42px,10vw,90px);
+    font-weight:900;
+    letter-spacing:4px;
+    line-height:1;
+}
+
+.hero h1 span{
+    color:#00e5ff;
+}
+
+.hero p{
+    margin:22px auto;
+    max-width:650px;
+    color:#aaa;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid #00e5ff;
+    border-radius:30px;
+    color:#00e5ff;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:28px;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.primary{
+    background:#00e5ff;
+    color:#000;
+}
+
+.secondary{
+    border:1px solid #333;
+    color:#fff;
+    background:#111;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,229,255,.2);
+}
+
+/* SECTIONS */
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+}
+
+.section-title span{
+    color:#00e5ff;
+}
+
+.section-title p{
+    color:#888;
+    margin-top:10px;
+}
+
+/* CARDS */
+.cards{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(145deg,#111,#080808);
+    border:1px solid #1d1d1d;
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00e5ff;
+}
+
+.card .icon{
+    font-size:35px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#888;
+    line-height:1.6;
+}
+
+/* STATS */
+.stats{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.stat{
+    text-align:center;
+    padding:30px 10px;
+    background:#0c0c0c;
+    border-radius:18px;
+    border:1px solid #191919;
+}
+
+.stat h3{
+    color:#00e5ff;
+    font-size:35px;
+}
+
+.stat p{
+    color:#777;
+    margin-top:6px;
+}
+
+/* SOCIAL */
+.social{
+    text-align:center;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+}
+
+.social-links a{
+    text-decoration:none;
+    color:#fff;
+    padding:13px 22px;
+    background:#111;
+    border:1px solid #222;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    border-color:#00e5ff;
+    color:#00e5ff;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:35px 20px;
+    border-top:1px solid #171717;
+    color:#666;
+}
+
+footer strong{
+    color:#00e5ff;
+}
+
+/* MOBILE */
+@media(max-width:650px){
+
+    nav{
+        padding:16px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    .hero{
+        min-height:95vh;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">SANSKARI <span>ROR</span></div>
+
+    <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#social">Social</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div>
+
+    <img src="images/profile.jpg" class="profile" alt="SANSKARI ROR">
+
+    <div class="badge">⚡ OFFICIAL WEBSITE</div>
+
+    <h1>SANSKARI <span>ROR</span></h1>
+
+    <p>
+        Editor • Creator • Anime Lover • BMW Enthusiast
+        <br>
+        Turning ideas into edits, visuals and digital experiences.
+    </p>
+
+    <div class="buttons">
+        <a href="#about" class="btn primary">Explore More</a>
+
+        <a href="#social" class="btn secondary">
+            My Socials
+        </a>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="section-title">
+    <h2>About <span>Me</span></h2>
+    <p>Welcome to the official SANSKARI ROR website.</p>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="icon">🎬</div>
+        <h3>Video Editor</h3>
+        <p>
+            Creative edits, music videos, slow & reverb
+            and cinematic visuals.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Content Creator</h3>
+        <p>
+            Creating unique digital content and building
+            a strong online identity.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚔️</div>
+        <h3>Anime Lover</h3>
+        <p>
+            Anime-inspired edits, characters and
+            cinematic aesthetics.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🏎️</div>
+        <h3>BMW Enthusiast</h3>
+        <p>
+            Passion for performance cars and especially
+            the legendary BMW M5.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+<div class="section-title">
+    <h2>My <span>Skills</span></h2>
+    <p>Things I love creating.</p>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>🎥 Video Editing</h3>
+        <p>Shorts, reels, music edits and cinematic videos.</p>
+    </div>
+
+    <div class="card">
+        <h3>🖼️ Thumbnail Design</h3>
+        <p>High-impact thumbnails designed for attention and CTR.</p>
+    </div>
+
+    <div class="card">
+        <h3>🎨 Graphic Design</h3>
+        <p>Posters, profile designs, banners and digital artwork.</p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+<section>
+
+<div class="section-title">
+    <h2>Creator <span>Stats</span></h2>
+</div>
+
+<div class="stats">
+
+    <div class="stat">
+        <h3>100+</h3>
+        <p>Edits Created</p>
+    </div>
+
+    <div class="stat">
+        <h3>1K+</h3>
+        <p>Community</p>
+    </div>
+
+    <div class="stat">
+        <h3>∞</h3>
+        <p>Creativity</p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SOCIAL -->
+<section id="social" class="social">
+
+<div class="section-title">
+    <h2>Find Me <span>Online</span></h2>
+    <p>Connect with SANSKARI ROR.</p>
+</div>
+
+<div class="social-links">
+
+    <!-- Replace these links with your real profiles -->
+
+    <a href="https://youtube.com/" target="_blank">
+        ▶ YouTube
+    </a>
+
+    <a href="https://instagram.com/" target="_blank">
+        ◎ Instagram
+    </a>
+
+    <a href="https://github.com/sanskari-ror07" target="_blank">
+        ◈ GitHub
+    </a>
+
+</div>
+
+</section>
+
+
+<footer>
+    © 2026 <strong>SANSKARI ROR</strong> — All Rights Reserved.
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
