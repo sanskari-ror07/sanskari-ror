@@ -1,0 +1,673 @@
+meta tag<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SANSKARI ROR | HARYANA KKR</title>
+<meta name="description" content="SANSKARI ROR - Creator, Editor, Music & Anime Lover from HARYANA KKR.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#e50914;
+    filter:blur(180px);
+    opacity:.12;
+    top:-180px;
+    left:-180px;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:17px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(5,5,5,.78);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #1c1c1c;
+    z-index:999;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#e50914;
+}
+
+.navlinks a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:13px;
+    transition:.3s;
+}
+
+.navlinks a:hover{
+    color:#e50914;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 60px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid #e50914;
+    border-radius:30px;
+    color:#e50914;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:22px;
+    box-shadow:0 0 20px #e5091425;
+}
+
+.profile{
+    width:125px;
+    height:125px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #e50914;
+    padding:4px;
+    background:#111;
+    box-shadow:0 0 40px #e5091455;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(48px,10vw,92px);
+    line-height:.95;
+    font-weight:900;
+    letter-spacing:-3px;
+}
+
+h1 span{
+    color:#e50914;
+}
+
+.hero-text{
+    color:#888;
+    max-width:650px;
+    margin:25px auto;
+    line-height:1.7;
+    font-size:17px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:13px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.primary{
+    background:#e50914;
+    color:white;
+}
+
+.secondary{
+    background:#111;
+    color:white;
+    border:1px solid #333;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px #e5091438;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title small{
+    color:#e50914;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.title h2{
+    font-size:40px;
+    margin-top:10px;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    color:#999;
+    line-height:1.9;
+}
+
+/* CARDS */
+
+.cards{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:18px;
+}
+
+.card{
+    padding:30px 22px;
+    background:linear-gradient(145deg,#111,#080808);
+    border:1px solid #202020;
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#e50914;
+    box-shadow:0 15px 40px #e5091425;
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* STATS */
+
+.stats{
+    max-width:850px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.stat{
+    background:#0c0c0c;
+    border:1px solid #202020;
+    border-radius:18px;
+    text-align:center;
+    padding:28px 10px;
+}
+
+.stat h3{
+    color:#e50914;
+    font-size:32px;
+}
+
+.stat p{
+    color:#777;
+    font-size:12px;
+    margin-top:7px;
+}
+
+/* SOCIAL */
+
+.social{
+    max-width:700px;
+    margin:auto;
+    display:grid;
+    gap:14px;
+}
+
+.social a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:19px 22px;
+    background:#0c0c0c;
+    border:1px solid #222;
+    border-radius:16px;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social a:hover{
+    border-color:#e50914;
+    transform:translateX(6px);
+}
+
+.social span{
+    color:#777;
+    font-size:12px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    background:linear-gradient(180deg,#050505,#100000);
+}
+
+.contact p{
+    color:#888;
+    margin:15px auto 25px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px 20px;
+    text-align:center;
+    color:#666;
+    font-size:12px;
+    border-top:1px solid #1c1c1c;
+}
+
+footer strong{
+    color:#e50914;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    .navlinks{
+        display:none;
+    }
+
+    section{
+        padding:70px 20px;
+    }
+
+    .hero{
+        min-height:92vh;
+    }
+
+    h1{
+        font-size:50px;
+    }
+
+    .hero-text{
+        font-size:15px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .title h2{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+SANSKARI <span>ROR</span>
+</div>
+
+<div class="navlinks">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#social">Social</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+⚡ HARYANA KKR
+</div>
+
+<img src="images/profile.jpg"
+class="profile"
+alt="SANSKARI ROR">
+
+<h1>
+SANSKARI <span>ROR</span>
+</h1>
+
+<p class="hero-text">
+Digital Creator • Video Editor • Music Creator • Anime Lover
+<br>
+Welcome to my official digital space.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="https://youtube.com/@sanskariror"
+target="_blank">
+▶ YouTube
+</a>
+
+<a class="btn secondary"
+href="https://www.instagram.com/sanskari_ror"
+target="_blank">
+◎ Instagram
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="title">
+
+<small>WHO I AM</small>
+
+<h2>About Me</h2>
+
+</div>
+
+<div class="about">
+
+<p>
+Welcome to the official website of
+<b>SANSKARI ROR</b>.
+I create digital content, edit videos, work with music
+and build creative digital experiences.
+<br><br>
+My style combines editing, music, anime aesthetics
+and a passion for performance cars.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="title">
+
+<small>WHAT I DO</small>
+
+<h2>My Skills</h2>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">🎬</div>
+
+<h3>Video Editing</h3>
+
+<p>
+Shorts, reels, cinematic edits and music videos.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎵</div>
+
+<h3>Music</h3>
+
+<p>
+Slow + Reverb, remixes, mashups and music content.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>Thumbnail Design</h3>
+
+<p>
+Creative thumbnails designed to grab attention.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>Web Design</h3>
+
+<p>
+Modern websites and creative digital projects.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+<div class="title">
+
+<small>CREATOR JOURNEY</small>
+
+<h2>My Stats</h2>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>285+</h3>
+<p>SUBSCRIBERS</p>
+</div>
+
+<div class="stat">
+<h3>33K+</h3>
+<p>BEST VIDEO VIEWS</p>
+</div>
+
+<div class="stat">
+<h3>9.8%</h3>
+<p>BEST CTR</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SOCIAL -->
+
+<section id="social">
+
+<div class="title">
+
+<small>CONNECT WITH ME</small>
+
+<h2>My Socials</h2>
+
+</div>
+
+<div class="social">
+
+<a href="https://youtube.com/@sanskariror"
+target="_blank">
+
+<strong>▶ YouTube</strong>
+
+<span>@sanskariror →</span>
+
+</a>
+
+
+<a href="https://www.instagram.com/sanskari_ror"
+target="_blank">
+
+<strong>◎ Instagram</strong>
+
+<span>@sanskari_ror →</span>
+
+</a>
+
+
+<a href="https://www.snapchat.com/add/rorbmv"
+target="_blank">
+
+<strong>👻 Snapchat</strong>
+
+<span>@rorbmv →</span>
+
+</a>
+
+
+<a href="https://x.com/SouravNSG1"
+target="_blank">
+
+<strong>𝕏 X / Twitter</strong>
+
+<span>@SouravNSG1 →</span>
+
+</a>
+
+
+<a href="mailto:rornsg07@gmail.com">
+
+<strong>✉ Gmail</strong>
+
+<span>Contact me →</span>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="title">
+
+<small>LET'S CONNECT</small>
+
+<h2>Have a Project?</h2>
+
+</div>
+
+<p>
+For editing, websites or creative projects, contact me.
+</p>
+
+<a class="btn primary"
+href="mailto:rornsg07@gmail.com">
+
+✉ Contact Me
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 <strong>SANSKARI ROR</strong> • HARYANA KKR
+
+</footer>
+
+</body>
+</html>
