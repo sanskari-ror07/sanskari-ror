@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SANSKARI ROR | Official Website</title>
-
-<meta name="description" content="Official website of SANSKARI ROR - Editor, Creator & Anime Lover.">
-<meta name="theme-color" content="#050505">
 
 <style>
 *{
@@ -23,188 +21,190 @@ html{
 
 body{
     background:#050505;
-    color:#fff;
+    color:white;
     overflow-x:hidden;
 }
 
-/* NAVBAR */
-nav{
+body:before{
+    content:"";
     position:fixed;
+    width:400px;
+    height:400px;
+    background:#e50914;
+    filter:blur(180px);
+    opacity:.12;
+    top:-100px;
+    left:-100px;
+    z-index:-1;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
     top:0;
-    left:0;
-    width:100%;
-    padding:18px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(5,5,5,.75);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.08);
     z-index:1000;
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #222;
+}
+
+.nav{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
     font-size:22px;
     font-weight:900;
-    letter-spacing:2px;
+    letter-spacing:1px;
 }
 
 .logo span{
-    color:#00e5ff;
+    color:#e50914;
 }
 
-nav a{
-    color:#fff;
+.nav a{
+    color:#aaa;
     text-decoration:none;
-    margin-left:22px;
+    margin-left:20px;
     font-size:14px;
-    transition:.3s;
 }
 
-nav a:hover{
-    color:#00e5ff;
+.nav a:hover{
+    color:white;
 }
 
 /* HERO */
+
 .hero{
-    min-height:100vh;
+    min-height:90vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:120px 20px 60px;
-    position:relative;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    width:350px;
-    height:350px;
-    background:#00e5ff;
-    filter:blur(180px);
-    opacity:.15;
-    border-radius:50%;
+    padding:60px 0;
 }
 
 .profile{
-    width:145px;
-    height:145px;
-    object-fit:cover;
+    width:125px;
+    height:125px;
     border-radius:50%;
-    border:3px solid #00e5ff;
-    padding:5px;
-    box-shadow:0 0 35px rgba(0,229,255,.35);
+    object-fit:cover;
+    border:4px solid #e50914;
+    box-shadow:0 0 35px rgba(229,9,20,.45);
     margin-bottom:25px;
-}
-
-.hero h1{
-    font-size:clamp(42px,10vw,90px);
-    font-weight:900;
-    letter-spacing:4px;
-    line-height:1;
-}
-
-.hero h1 span{
-    color:#00e5ff;
-}
-
-.hero p{
-    margin:22px auto;
-    max-width:650px;
-    color:#aaa;
-    font-size:17px;
-    line-height:1.7;
 }
 
 .badge{
     display:inline-block;
-    padding:8px 16px;
-    border:1px solid #00e5ff;
+    padding:8px 15px;
+    border:1px solid #333;
     border-radius:30px;
-    color:#00e5ff;
+    color:#aaa;
     font-size:13px;
     margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(48px,10vw,95px);
+    line-height:.95;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#e50914;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:18px;
+    margin:25px auto;
+    max-width:650px;
 }
 
 .buttons{
     display:flex;
     justify-content:center;
-    gap:14px;
+    gap:12px;
     flex-wrap:wrap;
-    margin-top:28px;
 }
 
 .btn{
-    padding:14px 25px;
-    border-radius:30px;
     text-decoration:none;
+    padding:14px 24px;
+    border-radius:30px;
     font-weight:bold;
     transition:.3s;
 }
 
 .primary{
-    background:#00e5ff;
-    color:#000;
+    background:#e50914;
+    color:white;
 }
 
 .secondary{
     border:1px solid #333;
-    color:#fff;
-    background:#111;
+    color:white;
 }
 
 .btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(0,229,255,.2);
+    box-shadow:0 10px 30px rgba(229,9,20,.25);
 }
 
 /* SECTIONS */
+
 section{
-    padding:90px 7%;
+    padding:80px 0;
 }
 
-.section-title{
+.title{
     text-align:center;
     margin-bottom:45px;
 }
 
-.section-title h2{
-    font-size:38px;
+.title small{
+    color:#e50914;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
-.section-title span{
-    color:#00e5ff;
-}
-
-.section-title p{
-    color:#888;
+.title h2{
+    font-size:40px;
     margin-top:10px;
 }
 
 /* CARDS */
-.cards{
-    max-width:1100px;
-    margin:auto;
+
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    gap:18px;
 }
 
 .card{
-    background:linear-gradient(145deg,#111,#080808);
-    border:1px solid #1d1d1d;
-    border-radius:20px;
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:22px;
     padding:30px;
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#00e5ff;
+    transform:translateY(-7px);
+    border-color:#e50914;
 }
 
-.card .icon{
+.icon{
     font-size:35px;
     margin-bottom:18px;
 }
@@ -214,110 +214,98 @@ section{
 }
 
 .card p{
-    color:#888;
+    color:#999;
     line-height:1.6;
 }
 
-/* STATS */
-.stats{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
+/* BMW */
 
-.stat{
+.bmw{
+    border:1px solid #222;
+    border-radius:30px;
+    padding:45px 25px;
     text-align:center;
-    padding:30px 10px;
-    background:#0c0c0c;
-    border-radius:18px;
-    border:1px solid #191919;
+    background:linear-gradient(145deg,#111,#070707);
 }
 
-.stat h3{
-    color:#00e5ff;
-    font-size:35px;
+.bmw h2{
+    font-size:clamp(30px,6vw,55px);
 }
 
-.stat p{
-    color:#777;
-    margin-top:6px;
+.bmw span{
+    color:#e50914;
+}
+
+.bmw p{
+    color:#999;
+    margin-top:12px;
 }
 
 /* SOCIAL */
+
 .social{
-    text-align:center;
-}
-
-.social-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
-    margin-top:25px;
 }
 
-.social-links a{
+.social a{
     text-decoration:none;
-    color:#fff;
-    padding:13px 22px;
+    color:white;
+    padding:18px;
+    border-radius:18px;
     background:#111;
     border:1px solid #222;
-    border-radius:30px;
+    text-align:center;
+    font-weight:bold;
     transition:.3s;
 }
 
-.social-links a:hover{
-    border-color:#00e5ff;
-    color:#00e5ff;
+.social a:hover{
+    background:#e50914;
+    transform:scale(1.03);
 }
 
 /* FOOTER */
+
 footer{
+    border-top:1px solid #222;
+    padding:30px 0;
     text-align:center;
-    padding:35px 20px;
-    border-top:1px solid #171717;
     color:#666;
 }
 
-footer strong{
-    color:#00e5ff;
+footer span{
+    color:#e50914;
 }
 
 /* MOBILE */
-@media(max-width:650px){
 
-    nav{
-        padding:16px 5%;
+@media(max-width:600px){
+
+    .nav{
+        height:60px;
     }
 
-    nav .links{
-        display:none;
-    }
-
-    .hero{
-        min-height:95vh;
-    }
-
-    .hero h1{
-        font-size:48px;
-    }
-
-    .hero p{
-        font-size:15px;
+    .nav-links a{
+        margin-left:8px;
+        font-size:12px;
     }
 
     section{
-        padding:70px 5%;
+        padding:60px 0;
     }
 
-    .section-title h2{
-        font-size:30px;
+    .hero{
+        min-height:85vh;
     }
 
-    .stats{
-        grid-template-columns:1fr;
+    .hero p{
+        font-size:16px;
+    }
+
+    .title h2{
+        font-size:32px;
     }
 }
 </style>
@@ -326,151 +314,124 @@ footer strong{
 <body>
 
 <nav>
-    <div class="logo">SANSKARI <span>ROR</span></div>
+<div class="container nav">
 
-    <div class="links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#social">Social</a>
-    </div>
+<div class="logo">
+SANSKARI <span>ROR</span>
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#social">Social</a>
+<a href="#bmw">Dream</a>
+</div>
+
+</div>
 </nav>
 
 
 <!-- HERO -->
-<section class="hero" id="home">
 
-<div>
+<header class="hero">
+<div class="container">
 
-    <img src="images/profile.jpg" class="profile" alt="SANSKARI ROR">
+<img src="images/profile.jpg" class="profile" alt="SANSKARI ROR">
 
-    <div class="badge">⚡ OFFICIAL WEBSITE</div>
+<div class="badge">
+● OFFICIAL WEBSITE
+</div>
 
-    <h1>SANSKARI <span>ROR</span></h1>
+<h1>
+SANSKARI <span>ROR</span>
+</h1>
 
-    <p>
-        Editor • Creator • Anime Lover • BMW Enthusiast
-        <br>
-        Turning ideas into edits, visuals and digital experiences.
-    </p>
+<p>
+Digital Content Creator • Video Editor • Anime Lover • Music Creator
+</p>
 
-    <div class="buttons">
-        <a href="#about" class="btn primary">Explore More</a>
+<div class="buttons">
 
-        <a href="#social" class="btn secondary">
-            My Socials
-        </a>
-    </div>
+<a class="btn primary"
+href="https://www.youtube.com/"
+target="_blank">
+▶ YouTube
+</a>
+
+<a class="btn secondary"
+href="https://www.instagram.com/"
+target="_blank">
+Instagram
+</a>
 
 </div>
 
-</section>
+</div>
+</header>
 
 
 <!-- ABOUT -->
+
 <section id="about">
 
-<div class="section-title">
-    <h2>About <span>Me</span></h2>
-    <p>Welcome to the official SANSKARI ROR website.</p>
+<div class="container">
+
+<div class="title">
+<small>WHO I AM</small>
+<h2>About Me</h2>
 </div>
 
-<div class="cards">
+<div class="grid">
 
-    <div class="card">
-        <div class="icon">🎬</div>
-        <h3>Video Editor</h3>
-        <p>
-            Creative edits, music videos, slow & reverb
-            and cinematic visuals.
-        </p>
-    </div>
+<div class="card">
+<div class="icon">🎬</div>
+<h3>Video Editor</h3>
+<p>
+Creative edits, cinematic visuals, music edits and high-quality content.
+</p>
+</div>
 
-    <div class="card">
-        <div class="icon">🔥</div>
-        <h3>Content Creator</h3>
-        <p>
-            Creating unique digital content and building
-            a strong online identity.
-        </p>
-    </div>
+<div class="card">
+<div class="icon">🎵</div>
+<h3>Music Creator</h3>
+<p>
+Slow & Reverb, music edits and nostalgic vibes.
+</p>
+</div>
 
-    <div class="card">
-        <div class="icon">⚔️</div>
-        <h3>Anime Lover</h3>
-        <p>
-            Anime-inspired edits, characters and
-            cinematic aesthetics.
-        </p>
-    </div>
+<div class="card">
+<div class="icon">🔥</div>
+<h3>Content Creator</h3>
+<p>
+Building my own digital world through creativity and consistency.
+</p>
+</div>
 
-    <div class="card">
-        <div class="icon">🏎️</div>
-        <h3>BMW Enthusiast</h3>
-        <p>
-            Passion for performance cars and especially
-            the legendary BMW M5.
-        </p>
-    </div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- SKILLS -->
-<section id="skills">
+<!-- DREAM CAR -->
 
-<div class="section-title">
-    <h2>My <span>Skills</span></h2>
-    <p>Things I love creating.</p>
-</div>
+<section id="bmw">
 
-<div class="cards">
+<div class="container">
 
-    <div class="card">
-        <h3>🎥 Video Editing</h3>
-        <p>Shorts, reels, music edits and cinematic videos.</p>
-    </div>
+<div class="bmw">
 
-    <div class="card">
-        <h3>🖼️ Thumbnail Design</h3>
-        <p>High-impact thumbnails designed for attention and CTR.</p>
-    </div>
+<div class="icon">🏎️</div>
 
-    <div class="card">
-        <h3>🎨 Graphic Design</h3>
-        <p>Posters, profile designs, banners and digital artwork.</p>
-    </div>
+<h2>
+BMW M5 <span>COMPETITION</span>
+</h2>
+
+<p>
+My favourite car • Performance • Luxury • Dream
+</p>
 
 </div>
-
-</section>
-
-
-<!-- STATS -->
-<section>
-
-<div class="section-title">
-    <h2>Creator <span>Stats</span></h2>
-</div>
-
-<div class="stats">
-
-    <div class="stat">
-        <h3>100+</h3>
-        <p>Edits Created</p>
-    </div>
-
-    <div class="stat">
-        <h3>1K+</h3>
-        <p>Community</p>
-    </div>
-
-    <div class="stat">
-        <h3>∞</h3>
-        <p>Creativity</p>
-    </div>
 
 </div>
 
@@ -478,28 +439,39 @@ footer strong{
 
 
 <!-- SOCIAL -->
-<section id="social" class="social">
 
-<div class="section-title">
-    <h2>Find Me <span>Online</span></h2>
-    <p>Connect with SANSKARI ROR.</p>
+<section id="social">
+
+<div class="container">
+
+<div class="title">
+<small>CONNECT WITH ME</small>
+<h2>My Socials</h2>
 </div>
 
-<div class="social-links">
+<div class="social">
 
-    <!-- Replace these links with your real profiles -->
+<a href="https://www.youtube.com/" target="_blank">
+▶ YouTube
+</a>
 
-    <a href="https://youtube.com/" target="_blank">
-        ▶ YouTube
-    </a>
+<a href="https://www.instagram.com/" target="_blank">
+◎ Instagram
+</a>
 
-    <a href="https://instagram.com/" target="_blank">
-        ◎ Instagram
-    </a>
+<a href="https://www.snapchat.com/" target="_blank">
+👻 Snapchat
+</a>
 
-    <a href="https://github.com/sanskari-ror07" target="_blank">
-        ◈ GitHub
-    </a>
+<a href="https://x.com/" target="_blank">
+𝕏 Twitter / X
+</a>
+
+<a href="mailto:your@email.com">
+✉ Gmail
+</a>
+
+</div>
 
 </div>
 
@@ -507,8 +479,12 @@ footer strong{
 
 
 <footer>
-    © 2026 <strong>SANSKARI ROR</strong> — All Rights Reserved.
+© 2026 <span>SANSKARI ROR</span> • All Rights Reserved
 </footer>
+
 
 </body>
 </html>
+
+
+
