@@ -1,4 +1,557 @@
-git add index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SANSKARI ROR | Official Website</title>
+
+<meta name="description" content="SANSKARI ROR - Digital Content Creator, Video Editor, Anime Lover & Music Creator">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#030303;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body:before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#e50914;
+    filter:blur(180px);
+    opacity:.12;
+    top:-200px;
+    left:-200px;
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #181818;
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#ff1520;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#fff;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px 40px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid #333;
+    border-radius:30px;
+    color:#aaa;
+    font-size:11px;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
+
+.avatar{
+    width:115px;
+    height:115px;
+    margin:auto;
+    border-radius:50%;
+    border:3px solid #e50914;
+    box-shadow:0 0 35px #e50914;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#111,#2b0000);
+    font-size:38px;
+    font-weight:bold;
+}
+
+h1{
+    margin-top:25px;
+    font-size:clamp(45px,10vw,90px);
+    line-height:1;
+    letter-spacing:-3px;
+}
+
+h1 span{
+    color:#e50914;
+}
+
+.hero p{
+    color:#888;
+    margin:22px auto;
+    max-width:600px;
+    line-height:1.7;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:13px;
+    transition:.3s;
+}
+
+.primary{
+    background:#e50914;
+    color:white;
+}
+
+.secondary{
+    border:1px solid #333;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px #e5091433;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.small-title{
+    color:#e50914;
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:10px;
+}
+
+/* ABOUT */
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    color:#999;
+    line-height:1.9;
+    font-size:16px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:18px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:linear-gradient(145deg,#101010,#070707);
+    border:1px solid #202020;
+    border-radius:20px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#e50914;
+    box-shadow:0 15px 40px #e5091420;
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    max-width:850px;
+    margin:auto;
+}
+
+.stat{
+    text-align:center;
+    padding:30px 10px;
+    background:#0b0b0b;
+    border:1px solid #1d1d1d;
+    border-radius:18px;
+}
+
+.stat h3{
+    font-size:32px;
+    color:#e50914;
+}
+
+.stat p{
+    color:#777;
+    margin-top:8px;
+    font-size:12px;
+}
+
+/* SOCIAL */
+.social{
+    max-width:700px;
+    margin:auto;
+    display:grid;
+    gap:15px;
+}
+
+.social a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    border:1px solid #202020;
+    background:#090909;
+    border-radius:15px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social a:hover{
+    border-color:#e50914;
+    transform:translateX(5px);
+}
+
+.social span{
+    color:#777;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    background:linear-gradient(180deg,#030303,#100000);
+}
+
+.contact p{
+    color:#888;
+    margin:15px auto 25px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px 20px;
+    border-top:1px solid #181818;
+    color:#666;
+    font-size:12px;
+}
+
+footer span{
+    color:#e50914;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    h1{
+        letter-spacing:-2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">SANSKARI <span>ROR</span></div>
+
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#stats">Stats</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">● OFFICIAL WEBSITE</div>
+
+<div class="avatar">R</div>
+
+<h1>SANSKARI <span>ROR</span></h1>
+
+<p>
+Digital Content Creator • Video Editor • Anime Lover • Music Creator
+</p>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="https://youtube.com/"
+target="_blank">
+▶ YouTube
+</a>
+
+<a class="btn secondary"
+href="https://instagram.com/"
+target="_blank">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="section-title">
+<div class="small-title">WHO I AM</div>
+<h2>About Me</h2>
+</div>
+
+<div class="about">
+
+<p>
+Welcome to the official world of <b>SANSKARI ROR</b>.
+I create digital content, edit videos, experiment with music
+and bring creative ideas to life.
+<br><br>
+This website is my personal digital space where creativity,
+editing, anime and music come together.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+<div class="section-title">
+<div class="small-title">WHAT I DO</div>
+<h2>My Skills</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🎬</div>
+<h3>Video Editing</h3>
+<p>Creative edits, cinematic videos, shorts and music edits.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎵</div>
+<h3>Music</h3>
+<p>Slow + Reverb, remixes, mashups and music content.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Thumbnail Design</h3>
+<p>High CTR thumbnails and eye-catching visual designs.</p>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Web Design</h3>
+<p>Modern websites and digital experiences.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+<section id="stats">
+
+<div class="section-title">
+<div class="small-title">MY JOURNEY</div>
+<h2>Creator Stats</h2>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>285+</h3>
+<p>SUBSCRIBERS</p>
+</div>
+
+<div class="stat">
+<h3>33K+</h3>
+<p>BEST VIDEO VIEWS</p>
+</div>
+
+<div class="stat">
+<h3>9.8%</h3>
+<p>BEST THUMBNAIL CTR</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SOCIAL -->
+<section>
+
+<div class="section-title">
+<div class="small-title">CONNECT</div>
+<h2>Find Me Online</h2>
+</div>
+
+<div class="social">
+
+<a href="https://youtube.com/" target="_blank">
+<strong>▶ YouTube</strong>
+<span>Watch my videos →</span>
+</a>
+
+<a href="https://instagram.com/" target="_blank">
+<strong>◎ Instagram</strong>
+<span>Follow me →</span>
+</a>
+
+<a href="https://github.com/" target="_blank">
+<strong>⌘ GitHub</strong>
+<span>My projects →</span>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+<div class="section-title">
+<div class="small-title">LET'S WORK</div>
+<h2>Have a Project?</h2>
+</div>
+
+<p>
+Need a website, video edit or creative design?
+Let's create something amazing.
+</p>
+
+<a class="btn primary"
+href="mailto:yourmail@gmail.com">
+Contact Me
+</a>
+
+</section>
+
+
+<footer>
+© 2026 <span>SANSKARI ROR</span> • All Rights Reserved
+</footer>
+
+</body>
+</html>git add index.html
 git commit -m "Update SANSKARI ROR website"
 git push
 
